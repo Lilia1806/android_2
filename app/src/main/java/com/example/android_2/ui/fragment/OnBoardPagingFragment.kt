@@ -17,7 +17,7 @@ class OnBoardPagingFragment : Fragment() {
         inflater: LayoutInflater, container: ViewGroup?,
         savedInstanceState: Bundle?
     ): View {
-        binding = FragmentOnBoardPagingBinding.inflate(layoutInflater)
+        binding = FragmentOnBoardPagingBinding.inflate(inflater, container, false)
         return binding.root
     }
 

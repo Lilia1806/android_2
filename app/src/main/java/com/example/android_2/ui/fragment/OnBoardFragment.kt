@@ -17,7 +17,7 @@ class OnBoardFragment : Fragment() {
         inflater: LayoutInflater, container: ViewGroup?,
         savedInstanceState: Bundle?
     ): View {
-        binding = FragmentOnBoardBinding.inflate(layoutInflater)
+        binding = FragmentOnBoardBinding.inflate(inflater, container, false)
         return binding.root
     }
 
@@ -44,6 +44,7 @@ class OnBoardFragment : Fragment() {
                 }
             }
         }
+
         viewPager.registerOnPageChangeCallback(object : ViewPager2.OnPageChangeCallback() {
             override fun onPageSelected(position: Int) {
                 when (position) {
