@@ -1,4 +1,4 @@
-package com.example.android_2.ui.fragment
+package com.example.android_2.ui.fragments
 
 import android.os.Bundle
 import androidx.fragment.app.Fragment
@@ -8,7 +8,7 @@ import android.view.ViewGroup
 import androidx.core.view.isVisible
 import androidx.viewpager2.widget.ViewPager2
 import com.example.android_2.databinding.FragmentOnBoardBinding
-import com.example.android_2.ui.adapter.OnBoardViewPagerAdapter
+import com.example.android_2.ui.adapters.OnBoardViewPagerAdapter
 
 class OnBoardFragment : Fragment() {
 
@@ -24,16 +24,12 @@ class OnBoardFragment : Fragment() {
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
         initialize()
-        dots()
         setupListener()
     }
 
     private fun initialize() {
         binding.viewPager.adapter = OnBoardViewPagerAdapter(this@OnBoardFragment)
-    }
-
-    private fun dots() = with(binding) {
-        dotsIndicator.attachTo(viewPager)
+        binding.dotsIndicator.attachTo(binding.viewPager)
     }
 
     private fun setupListener() = with(binding) {

@@ -7,12 +7,12 @@
 
     <fragment
         android:id="@+id/noteAppFragment"
-        android:name="com.example.android_2.ui.fragment.home.NoteAppFragment"
+        android:name="com.example.android_2.ui.fragments.home.NoteAppFragment"
         android:label="fragment_note_app"
         tools:layout="@layout/fragment_note_app" />
     <fragment
         android:id="@+id/onBoardFragment"
-        android:name="com.example.android_2.ui.fragment.OnBoardFragment"
+        android:name="com.example.android_2.ui.fragments.OnBoardFragment"
         android:label="fragment_on_board"
         tools:layout="@layout/fragment_on_board" >
         <action
@@ -21,7 +21,7 @@
     </fragment>
     <fragment
         android:id="@+id/onBoardPagingFragment"
-        android:name="com.example.android_2.ui.fragment.OnBoardPagingFragment"
+        android:name="com.example.android_2.ui.fragments.OnBoardPagingFragment"
         android:label="fragment_on_board_paging"
         tools:layout="@layout/fragment_on_board_paging" />
 </navigation>
