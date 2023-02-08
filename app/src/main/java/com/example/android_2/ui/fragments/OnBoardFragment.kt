@@ -11,10 +11,12 @@ import androidx.viewpager2.widget.ViewPager2
 import com.example.android_2.R
 import com.example.android_2.databinding.FragmentOnBoardBinding
 import com.example.android_2.ui.adapters.OnBoardViewPagerAdapter
+import com.example.android_2.utils.PreferenceHelper
 
 class OnBoardFragment : Fragment() {
 
     private lateinit var binding: FragmentOnBoardBinding
+
     override fun onCreateView(
         inflater: LayoutInflater, container: ViewGroup?,
         savedInstanceState: Bundle?
@@ -42,7 +44,11 @@ class OnBoardFragment : Fragment() {
                 }
             }
             binding.btnStart.setOnClickListener {
+                val preferenceHelper = PreferenceHelper
+                preferenceHelper.unit(requireContext())
+                preferenceHelper.safeBoolean = true
                 findNavController().navigate(R.id.action_onBoardFragment_to_noteAppFragment)
+
             }
         }
 

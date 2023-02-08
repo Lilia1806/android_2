@@ -11,6 +11,7 @@ import com.example.android_2.databinding.FragmentOnBoardPagingBinding
 class OnBoardPagingFragment : Fragment() {
 
     private lateinit var binding: FragmentOnBoardPagingBinding
+
     override fun onCreateView(
         inflater: LayoutInflater, container: ViewGroup?,
         savedInstanceState: Bundle?

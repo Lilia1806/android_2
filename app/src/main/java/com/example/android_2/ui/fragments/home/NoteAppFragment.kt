@@ -10,6 +10,7 @@ import com.example.android_2.databinding.FragmentNoteAppBinding
 class NoteAppFragment : Fragment() {
 
     private lateinit var binding: FragmentNoteAppBinding
+
     override fun onCreateView(
         inflater: LayoutInflater, container: ViewGroup?,
         savedInstanceState: Bundle?
