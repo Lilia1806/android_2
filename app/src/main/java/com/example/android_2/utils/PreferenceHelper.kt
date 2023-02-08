@@ -3,7 +3,7 @@ package com.example.android_2.utils
 import android.content.Context
 import android.content.SharedPreferences
 
-class PreferenceHelper {
+object PreferenceHelper {
 
     private lateinit var sharedPreference: SharedPreferences
 

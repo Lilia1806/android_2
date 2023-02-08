@@ -11,7 +11,6 @@ import androidx.viewpager2.widget.ViewPager2
 import com.example.android_2.R
 import com.example.android_2.databinding.FragmentOnBoardBinding
 import com.example.android_2.ui.adapters.OnBoardViewPagerAdapter
-import com.example.android_2.utils.PreferenceHelper
 
 class OnBoardFragment : Fragment() {
 
@@ -23,7 +22,7 @@ class OnBoardFragment : Fragment() {
         binding = FragmentOnBoardBinding.inflate(inflater, container, false)
         return binding.root
     }
-
+    
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
         initialize()
@@ -67,7 +66,4 @@ class OnBoardFragment : Fragment() {
             }
         })
     }
-//    private fun open(){
-//        PreferenceHelper.safeBoolean = true
-//    }
 }
