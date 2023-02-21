@@ -1,4 +1,4 @@
-package com.example.android_2.ui.fragments
+package com.example.android_2.ui.fragments.board
 
 import android.os.Bundle
 import androidx.fragment.app.Fragment
@@ -42,6 +42,7 @@ class OnBoardPagingFragment : Fragment() {
             }
         }
     }
+
     companion object {
         const val ARG_ONBOARD_PAGE_POSITION = "onBoardPage"
     }

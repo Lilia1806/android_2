@@ -5,7 +5,7 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:background="@color/black"
-    tools:context=".ui.fragments.OnBoardPagingFragment">
+    tools:context=".ui.fragments.board.OnBoardPagingFragment">
 
     <TextView
         android:id="@+id/fr_text"

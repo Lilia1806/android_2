@@ -9,6 +9,11 @@
     <color name="white">#FFFFFFFF</color>
     <color name="m">#00FFFFFF</color>
     <color name="o">#FF9800</color>
+    <color name="dg">#131212</color>
     <color name="g">#191818</color>
+    <color name="wg">#B1B1B1</color>
+    <color name="w">#8E8B8B</color>
+    <color name="y">#D88B02</color>
+    <color name="r">#505050</color>
 
 </resources>

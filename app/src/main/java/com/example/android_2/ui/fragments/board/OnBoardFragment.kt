@@ -1,4 +1,4 @@
-package com.example.android_2.ui.fragments
+package com.example.android_2.ui.fragments.board
 
 import android.os.Bundle
 import androidx.fragment.app.Fragment
@@ -17,6 +17,7 @@ class OnBoardFragment : Fragment() {
 
     private lateinit var binding: FragmentOnBoardBinding
 
+
     override fun onCreateView(
         inflater: LayoutInflater, container: ViewGroup?,
         savedInstanceState: Bundle?
@@ -24,7 +25,7 @@ class OnBoardFragment : Fragment() {
         binding = FragmentOnBoardBinding.inflate(inflater, container, false)
         return binding.root
     }
-    
+
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
         initialize()
@@ -47,8 +48,7 @@ class OnBoardFragment : Fragment() {
                 val preferenceHelper = PreferenceHelper
                 preferenceHelper.unit(requireContext())
                 preferenceHelper.safeBoolean = true
-                findNavController().navigate(R.id.action_onBoardFragment_to_noteAppFragment)
-
+                findNavController().navigate(R.id.action_onBoardFragment_to_registrationFragment)
             }
         }
 

@@ -23,7 +23,7 @@ class MainActivity : AppCompatActivity() {
         navController = navHostFragment.navController
 
         if (PreferenceHelper.safeBoolean) {
-            navController.navigate(R.id.noteAppFragment)
+            navController.navigate(R.id.registrationFragment)
         } else {
             navController.navigate(R.id.onBoardFragment)
         }

@@ -3,10 +3,10 @@ package com.example.android_2.ui.adapters
 import android.os.Bundle
 import androidx.fragment.app.Fragment
 import androidx.viewpager2.adapter.FragmentStateAdapter
-import com.example.android_2.ui.fragments.OnBoardPagingFragment
-import com.example.android_2.ui.fragments.OnBoardPagingFragment.Companion.ARG_ONBOARD_PAGE_POSITION
+import com.example.android_2.ui.fragments.board.OnBoardPagingFragment
+import com.example.android_2.ui.fragments.board.OnBoardPagingFragment.Companion.ARG_ONBOARD_PAGE_POSITION
 
-class OnBoardViewPagerAdapter (fragment: Fragment) : FragmentStateAdapter(fragment) {
+class OnBoardViewPagerAdapter(fragment: Fragment) : FragmentStateAdapter(fragment) {
 
     override fun getItemCount(): Int = 3
 
