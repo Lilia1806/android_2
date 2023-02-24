@@ -3,23 +3,49 @@
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:id="@+id/nav_graph.xml"
-    app:startDestination="@id/noteAppFragment">
+    app:startDestination="@id/onBoardFragment">
 
     <fragment
         android:id="@+id/onBoardFragment"
-        android:name="com.example.android_2.ui.fragments.OnBoardFragment"
+        android:name="com.example.android_2.ui.fragments.board.OnBoardFragment"
         android:label="fragment_on_board"
         tools:layout="@layout/fragment_on_board">
-
         <action
-            android:id="@+id/action_onBoardFragment_to_noteAppFragment"
-            app:destination="@id/noteAppFragment"
-            app:popUpTo="@id/noteAppFragment" />
+            android:id="@+id/action_onBoardFragment_to_registrationFragment"
+            app:destination="@id/registrationFragment"
+            app:popUpTo="@id/onBoardFragment"
+            app:popUpToInclusive="true"/>
     </fragment>
-
     <fragment
         android:id="@+id/noteAppFragment"
         android:name="com.example.android_2.ui.fragments.home.NoteAppFragment"
         android:label="fragment_note_app"
-        tools:layout="@layout/fragment_note_app" />
+        tools:layout="@layout/fragment_note_app" >
+        <action
+            android:id="@+id/action_noteAppFragment_to_detailFragment"
+            app:destination="@id/detailFragment" />
+        <argument
+            android:name="model"
+            app:argType="com.example.android_2.ui.adapters.NoteModel" />
+    </fragment>
+    <fragment
+        android:id="@+id/detailFragment"
+        android:name="com.example.android_2.ui.fragments.detail.DetailFragment"
+        android:label="fragment_detail"
+        tools:layout="@layout/fragment_detail" >
+        <action
+            android:id="@+id/action_detailFragment_to_noteAppFragment"
+            app:destination="@id/noteAppFragment" />
+    </fragment>
+    <fragment
+        android:id="@+id/registrationFragment"
+        android:name="com.example.android_2.ui.fragments.register.RegistrationFragment"
+        android:label="fragment_registration"
+        tools:layout="@layout/fragment_registration" >
+        <action
+            android:id="@+id/action_registrationFragment_to_noteAppFragment"
+            app:destination="@id/noteAppFragment"
+            app:popUpTo="@id/registrationFragment"
+            app:popUpToInclusive="true"/>
+    </fragment>
 </navigation>

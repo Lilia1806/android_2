@@ -1,14 +1,13 @@
 package com.example.android_2.ui.fragments.register
 
 import android.os.Bundle
-import android.util.Log
 import androidx.fragment.app.Fragment
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import android.widget.Toast
+import androidx.core.view.isVisible
 import androidx.navigation.fragment.findNavController
-import com.example.android_2.R
 import com.example.android_2.databinding.FragmentRegistrationBinding
 import com.google.firebase.FirebaseException
 import com.google.firebase.auth.*
@@ -20,7 +19,6 @@ class RegistrationFragment : Fragment() {
 
     private lateinit var binding: FragmentRegistrationBinding
     private var auth: FirebaseAuth? = null
-
     private var storeVerificationId: String? = ""
     private lateinit var resendToken: PhoneAuthProvider.ForceResendingToken
 
@@ -40,10 +38,26 @@ class RegistrationFragment : Fragment() {
 
     private fun setupListener() = with(binding) {
         btReceive.setOnClickListener {
-            startPhoneNumberVerification(edNumber.text.toString())
+            if (edNumber.text.isEmpty()) {
+                if (edNumber.text.isEmpty()) {
+                    edNumber.error = "Заполните страку"
+                }
+            } else {
+                startPhoneNumberVerification(edNumber.text.toString())
+            }
+            btConfirm.isVisible = true
         }
         btConfirm.setOnClickListener {
-            verifyPhoneNumberWithCode(storeVerificationId, edKod.text.toString())
+            if (edNumber.text.isEmpty() || edKod.text.isEmpty()) {
+                if (edNumber.text.isEmpty()) {
+                    edNumber.error = "Заполните страку"
+                    if (edKod.text.isEmpty()) {
+                        edKod.error = "Заполните страку"
+                    }
+                }
+            } else {
+                verifyPhoneNumberWithCode(storeVerificationId, edKod.text.toString())
+            }
         }
     }
 
@@ -54,7 +68,11 @@ class RegistrationFragment : Fragment() {
                     findNavController().navigate(com.example.android_2.R.id.noteAppFragment)
                 } else {
                     if (task.exception is FirebaseAuthInvalidCredentialsException) {
-                        Toast.makeText(requireContext(), "Registration is not", Toast.LENGTH_SHORT)
+                        Toast.makeText(
+                            requireContext(),
+                            "Registration is not",
+                            Toast.LENGTH_SHORT
+                        )
                             .show()
                     }
                 }
@@ -68,10 +86,10 @@ class RegistrationFragment : Fragment() {
 
     private fun startPhoneNumberVerification(phoneNumber: String) {
         val options = PhoneAuthOptions.newBuilder(auth!!)
-            .setPhoneNumber(phoneNumber)       // Phone number to verify
-            .setTimeout(60L, TimeUnit.SECONDS) // Timeout and unit
-            .setActivity(requireActivity())                 // Activity (for callback binding)
-            .setCallbacks(callback)          // OnVerificationStateChangedCallbacks
+            .setPhoneNumber(phoneNumber)       // Номер телефона для подтверждения
+            .setTimeout(60L, TimeUnit.SECONDS) // Тайм-аут и единица измерения
+            .setActivity(requireActivity())                 // Активность (для привязки обратного вызова)
+            .setCallbacks(callback)          // При изменении состояния проверки Обратные вызовы
             .build()
         PhoneAuthProvider.verifyPhoneNumber(options)
     }
@@ -94,8 +112,3 @@ class RegistrationFragment : Fragment() {
         }
     }
 }
-
-
-
-
-

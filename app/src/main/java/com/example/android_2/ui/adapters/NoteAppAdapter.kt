@@ -1,6 +1,7 @@
 package com.example.android_2.ui.adapters
 
 import android.annotation.SuppressLint
+import android.graphics.Color
 import android.view.LayoutInflater
 import android.view.ViewGroup
 import androidx.recyclerview.widget.RecyclerView
@@ -11,9 +12,7 @@ class NoteAppAdapter(
 
     private var list: ArrayList<NoteModel>,
     private val onLongClickItem: OnClickItem
-)
-
-    : RecyclerView.Adapter<NoteAppAdapter.NoteViewHolder>() {
+) : RecyclerView.Adapter<NoteAppAdapter.NoteViewHolder>() {
 
     @SuppressLint("NotifyDataSetChanged")
     fun setList(list: List<NoteModel>) {
@@ -27,6 +26,8 @@ class NoteAppAdapter(
             binding.txtName.text = noteModel.title
             binding.txtText.text = noteModel.description
             binding.date.text = noteModel.data
+            binding.time.text = noteModel.time
+            binding.cardView.setCardBackgroundColor(Color.parseColor(noteModel.color))
         }
     }
 
